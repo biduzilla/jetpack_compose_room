@@ -1,11 +1,13 @@
 package com.example.composeroomretrofit.data
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import com.example.composeroomretrofit.model.Contact
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface ContactDao {
 
     @Upsert

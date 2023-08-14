@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -28,10 +29,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composeroomretrofit.ContactEvent
 import com.example.composeroomretrofit.SortType
+import com.example.composeroomretrofit.ui.components.AddContact
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContactScree(
+fun ContactScreen(
     state: ContactState,
     onEvent: (ContactEvent) -> Unit
 ) {
@@ -45,8 +47,12 @@ fun ContactScree(
                     contentDescription = "Add Contact"
                 )
             }
-        }
+        },
+        modifier = Modifier.padding(16.dp)
     ) { paddingValues ->
+        if (state.isAddContact) {
+            AddContact(state = state, onEvent = onEvent)
+        }
         LazyColumn(
             contentPadding = paddingValues,
             modifier = Modifier.fillMaxSize(),

@@ -63,7 +63,6 @@ fun AddContact(
         confirmButton = {
             Box(
                 modifier = Modifier.fillMaxWidth(),
-                contentAlignment = Alignment.CenterEnd
             ) {
                 Button(onClick = { onEvent(ContactEvent.SaveContact) }) {
                     Text(text = "Save Contact")
