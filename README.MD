@@ -1,4 +1,4 @@
-# Projeto Meu Lar
+# Compose Room
 
 ## Sobre o projeto
 Projeto de estudos para entender melhor o armazenamento de dados internos utilizando ROOM database.
